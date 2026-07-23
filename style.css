@@ -304,11 +304,12 @@ display:block;
 
 
 .hero h2{
-
-    margin:20px;
-
-   color:var(--primary);
-
+    margin: 20px 0;
+    color: var(--primary);
+    min-height: 45px; /* يحجز مساحة ثابتة تماماً حتى لو كان النص فارغاً أثناء الحذف */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -576,7 +577,7 @@ background:rgba(255,255,255,.05);
 
 border:1px solid rgba(255,255,255,.1);
 
-padding:35px;
+padding:26px;
 
 border-radius:20px;
 
@@ -1150,25 +1151,3 @@ margin-top:10px;
 
 }
 
-
-/* ===========================
-   Light Mode
-=========================== */
-
-body.light{
-
-    --bg:#f8fafc;
-
-    --card:#ffffff;
-
-    --card2:#f1f5f9;
-
-    --text:#111827;
-
-    --text2:#475569;
-
-    --primary:#2563eb;
-
-    --border:#d1d5db;
-
-}
