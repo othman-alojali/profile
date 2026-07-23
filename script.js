@@ -34,28 +34,7 @@ function erase(){
     }
 }
 
-const themeBtn = document.getElementById("theme-toggle");
-const icon = themeBtn.querySelector("i");
 
-// استرجاع آخر وضع للثيم
-const savedTheme = localStorage.getItem("theme");
-
-if(savedTheme === "light"){
-    document.body.classList.add("light");
-    icon.classList.replace("fa-moon","fa-sun");
-}
-
-themeBtn.onclick = ()=>{
-    document.body.classList.toggle("light");
-
-    if(document.body.classList.contains("light")){
-        localStorage.setItem("theme","light");
-        icon.classList.replace("fa-moon","fa-sun");
-    }else{
-        localStorage.setItem("theme","dark");
-        icon.classList.replace("fa-sun","fa-moon");
-    }
-}
 
 // تحكم في الهيدر عند التمرير
 const header = document.querySelector("header");
