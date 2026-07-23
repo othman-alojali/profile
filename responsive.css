@@ -1,17 +1,19 @@
 /* ===========================
    Tablet
 =========================== */
-
 @media (max-width:1024px){
-
     header{
         width:95%;
     }
 
     .projects-container,
-    .skill-container,
-    .certificate-container{
+    .skill-container{
         grid-template-columns:repeat(2,1fr);
+    }
+
+    /* جعل بطاقات الشهادات تظهر تحت بعضها في الشاشات المتوسطة أيضاً لتجنب الازدحام */
+    .certificate-container{
+        grid-template-columns:1fr;
     }
 
     .stats{
@@ -21,7 +23,6 @@
     .info{
         grid-template-columns:1fr;
     }
-
 }
 
 /* ===========================
@@ -38,97 +39,83 @@
     cursor:pointer;
     font-size:20px;
 }
+
 @media(max-width:768px){
+    .menu-btn{
+        display:flex;
+    }
 
-header{
+    header{
+        padding:0 18px;
+        direction: rtl;
+        height:70px;
+    }
 
-    padding:0 18px;
- direction: rtl;
-    height:70px;
+    .logo{
+        flex:1;
+        text-align:right;
+        font-size:22px;
+        font-weight:700;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+    }
 
-}
+    .menu-btn,
+    .theme{
+        width:38px;
+        height:38px;
+        margin-left:10px;
+        border-radius:10px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-shrink:0;
+    }
 
-.logo{
-
-    flex:1;
-
-    text-align:center;
-
-    font-size:22px;
-
-    font-weight:700;
-
-    white-space:nowrap;
-
-    overflow:hidden;
-
-    text-overflow:ellipsis;
-
-}
-
-.menu-btn,
-.theme{
-
-    width:30px;
-    height:30px;
-margin-left:10px;
-    border-radius:125px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    flex-shrink:0;
-
-}
-
-}
     /* Navigation */
+    nav{
+        position:fixed;
+        top:70px;
+        right:-100%;
+        width:260px;
+        height:calc(100vh - 70px);
+        background:#0f172a;
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items:center;
+        padding-top:40px;
+        gap:28px;
+        transition:.35s ease;
+        box-shadow:-5px 0 25px rgba(0,0,0,0.5);
+    }
 
-  nav{
+    nav.active{
+        right:0;
+    }
 
-    display:flex;
-    gap:35px;
+    /* Hero Section Fixes for Mobile */
+    .hero {
+        padding-top: 140px;
+    }
 
-}
+    .hero h1 {
+        font-size: 32px;
+        margin-top: 20px;
+    }
 
-@media(max-width:768px){
+    .hero p {
+        font-size: 15px;
+        padding: 0 10px;
+    }
 
-nav{
+    .profile-box {
+        width: 150px;
+        height: 150px;
+    }
 
-    position:fixed;
-
-    top:70px;
-    right:-100%;
-
-    width:260px;
-    height:calc(100vh - 70px);
-
-    background:#0f172a;
-
-    display:flex;
-    flex-direction:column;
-
-    justify-content:flex-start;
-    align-items:center;
-
-    padding-top:40px;
-
-    gap:28px;
-
-    transition:.35s ease;
-
-}
-
-nav.active{
-
-    right:0;
-
-}
-
-}
     /* Buttons */
-
     .buttons{
         flex-direction:column;
         align-items:center;
@@ -140,7 +127,6 @@ nav.active{
     }
 
     /* Sections */
-
     section{
         width:92%;
         margin:80px auto;
@@ -158,7 +144,6 @@ nav.active{
     }
 
     /* Timeline */
-
     .timeline::before{
         right:15px;
     }
@@ -176,7 +161,6 @@ nav.active{
     }
 
     /* Contact */
-
     .contact-box{
         width:100%;
     }
@@ -187,7 +171,6 @@ nav.active{
     }
 
     /* Misc */
-
     .section-title h2{
         font-size:30px;
     }
@@ -217,21 +200,4 @@ nav.active{
     .social a{
         margin:0;
     }
-
-}
-
-/* ===========================
-   Hide menu button on Desktop
-=========================== */
-
-.menu-btn{
-    display:none;
-}
-
-@media (max-width:768px){
-
-    .menu-btn{
-        display:flex;
-    }
-
 }
